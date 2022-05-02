@@ -240,13 +240,15 @@ function readInput() {
     }
     console.log(inp);
     console.log(currentSol);
-    var count = 0;
-    while (currentSol.length < 6){
-        count = count + 1;
-        findSol(currentSol, inp.length-1);
-        if (count > 100){
-            // console.log("No solution found. Check input.");
-            break;
+    if (currentSol[0] !== 'bbbbb') {
+        var count = 0;
+        while (currentSol.length < 6){
+            count = count + 1;
+            findSol(currentSol, inp.length-1);
+            if (count > 100){
+                // console.log("No solution found. Check input.");
+                break;
+            }
         }
     }
     // console.log("Final solution:", currentSol);
@@ -256,6 +258,8 @@ function readInput() {
         for (ci = currentSol.length-1; ci >=0 ; ci--){
             sv = sv.concat(currentSol[ci].toUpperCase()+"<br>");
         }
+    } else if (currentSol[0] === 'bbbbb') {
+        sv = "Um.. you need to enter values first before pressing Solve."
     } else {
         sv = "No solution found. Check input."
     }
