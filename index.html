@@ -228,7 +228,7 @@ function readInput() {
             if (cols[j].firstChild.value === '') {
                 currInp = currInp.concat('b');
             } else {
-                currInp = currInp.concat(cols[j].firstChild.value);
+                currInp = currInp.concat(cols[j].firstChild.value.toLowerCase());
             }
         }
         if (i===rows.length-1){
