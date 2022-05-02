@@ -164,7 +164,6 @@ function findSol(currentSol, idx) {
   return false;
 }
 
-
 function addRow(){
   var parentTable = document.getElementById('mytab');
   var myTd,myInput;
@@ -183,43 +182,13 @@ function removeRow(){
     document.getElementById("mytab").deleteRow(0);
 }
 
-function readInputBB() {
-    
-    var table=document.getElementById("mytab");
-    var inp = [];
-    var currentSol = [];
-    var rows=document.getElementsByTagName("tr");
-
-    for(var i=0; i<rows.length; i++) {
-        var currInp = "";
-        cols = rows[i].getElementsByTagName("td");
-        for(var j=0; j<cols.length;j++){
-            if (cols[j].firstChild.value === '') {
-                currInp = currInp.concat('b');
-            } else {
-                currInp = currInp.concat(cols[j].firstChild.value);
-            }
-        }
-        if (i===rows.length-1){
-            currentSol.push(currInp);
-        } else{
-            inp.push(currInp);
-        }
-        
-    }
-    console.log(inp);
-    console.log(currentSol);
-}
-
 var inp = [];
 var currentSol = [];
 function readInput() {
     inp = [];
     currentSol = [];
     var table=document.getElementById("mytab");
-
     var rows=document.getElementsByTagName("tr");
-    // console.log("rowlen", rows.length)
 
     for(var i=0; i<rows.length; i++) {
         var currInp = "";
@@ -236,7 +205,6 @@ function readInput() {
         } else{
             inp.push(currInp);
         }
-        
     }
     console.log(inp);
     console.log(currentSol);
